@@ -1,4 +1,4 @@
-from flask import flask, jsonify
+from flask import Flask, jsonify
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
 from fastapi.requests import Request
