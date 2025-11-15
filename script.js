@@ -12,3 +12,31 @@ document.querySelectorAll('svg a').forEach(area => {
         tooltip.style.opacity = 0;
     });
 });
+
+window.onload = async () => {
+    const svgObj = document.getElementById("worldmap");
+
+    svgObj.addEventListener("load", async () => {
+        const svgDoc = svgObj.contentDocument;
+
+        const res = await fetch("http://127.0.0.1:8000/countries");
+        const countryCodes = await res.json();
+
+        console.log("Loaded countries:", countryCodes);
+
+        // highlight each country if you want
+        countryCodes.forEach(code => {
+            const region = svgDoc.getElementById(code);  // your SVG id MUST match code
+            if (region) {
+                region.style.fill = "lightgreen";
+
+                region.addEventListener("click", async () => {
+                    const detailsRes = await fetch(`http://127.0.0.1:8000/country/${code}`);
+                    const details = await detailsRes.json();
+
+                    alert(`Country: ${details.name}\nCapital: ${details.capital}`);
+                });
+            }
+        });
+    });
+};
