@@ -12,3 +12,5 @@ document.querySelectorAll('svg a').forEach(area => {
         tooltip.style.opacity = 0;
     });
 });
+
+
