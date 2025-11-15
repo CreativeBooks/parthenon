@@ -13,30 +13,31 @@ document.querySelectorAll('svg a').forEach(area => {
     });
 });
 
-window.onload = async () => {
-    const svgObj = document.getElementById("worldmap");
 
-    svgObj.addEventListener("load", async () => {
-        const svgDoc = svgObj.contentDocument;
 
-        const res = await fetch("http://127.0.0.1:8000/countries");
-        const countryCodes = await res.json();
+//window.onload = async () => {
+    //const svgObj = document.getElementById("worldmap");
 
-        console.log("Loaded countries:", countryCodes);
+    //svgObj.addEventListener("load", async () => {
+        //const svgDoc = svgObj.contentDocument;
 
-        // highlight each country if you want
-        countryCodes.forEach(code => {
-            const region = svgDoc.getElementById(code);  // your SVG id MUST match code
-            if (region) {
-                region.style.fill = "lightgreen";
+        //const res = await fetch("http://127.0.0.1:8000/countries");
+        //const countryCodes = await res.json();
 
-                region.addEventListener("click", async () => {
-                    const detailsRes = await fetch(`http://127.0.0.1:8000/country/${code}`);
-                    const details = await detailsRes.json();
+        //console.log("Loaded countries:", countryCodes);
 
-                    alert(`Country: ${details.name}\nCapital: ${details.capital}`);
-                });
-            }
-        });
-    });
-};
+        //countryCodes.forEach(code => {
+            //const region = svgDoc.getElementById(code);  // your SVG id MUST match code
+            //if (region) {
+                //region.style.fill = "lightgreen";
+
+                //region.addEventListener("click", async () => {
+                    //const detailsRes = await fetch(`http://127.0.0.1:8000/country/${code}`);
+                    //const details = await detailsRes.json();
+
+                    //alert(`Country: ${details.name}\nCapital: ${details.capital}`);
+                //});
+            //}
+        //});
+    //});
+//};
