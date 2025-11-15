@@ -28,8 +28,20 @@ Countries = {
     }
 }
 
+
+@app.get("/country/{code}")
+def get_country(code: str):
+    code = code.lower()
+    if code not in Countries:
+        raise HTTPException(status_code=404, detail="Country not found")
+    return Countries[code]
+
 @app.get("/countries")
 def get_countries():
     # return a list of available country codes
-    return Countries
+    return list(Countries.keys())
 
+
+
+if __name__ == "__main__":
+    app.run(debug=True, port=8000)
