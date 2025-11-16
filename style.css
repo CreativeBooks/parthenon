@@ -15,8 +15,23 @@ body {
     background: color #01171b;
 }
 
+html, body {
+    background-color: black;
+    height:100%;
+    margin:0;
+}
+
+svg {
+    padding-top: 30px;
+    display: block; 
+    margin: 0 auto;
+    width: 100%;     /* optional */
+    height: auto;    /* optional */
+}
+
+
 svg path {
-    fill: #000000;
+    fill: #ffffff;
     stroke: #eee;
     stroke-width: .25;
 }
@@ -51,12 +66,9 @@ svg path:hover {
     margin-bottom: 30px;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 .ccontent {
     width:46%;
     border:2px solid white;
     padding:15px;
 }
+
