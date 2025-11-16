@@ -35,9 +35,12 @@ svg path:hover {
 
 .content {
     width:35%;
+    border:2px solid white;
+    padding:15px;
 }
 
 .container {
     display: flex;
     gap:10px;
+    margin-bottom:30px;
 }
