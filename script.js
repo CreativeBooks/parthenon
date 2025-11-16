@@ -15,6 +15,7 @@ document.querySelectorAll('svg a').forEach(area => {
 
 
 
+
 //window.onload = async () => {
     //const svgObj = document.getElementById("worldmap");
 
