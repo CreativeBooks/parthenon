@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Felipa&display=swap');
+
+.felipa-regular {
+    font-family: "Felipa", serif;
+    font-weight: 400;
+    font-style: normal;
+}
 
 * {
     margin: 0;
@@ -34,10 +40,23 @@ svg path:hover {
 }
 
 .content {
-    width:35%;
+    width: 35%;
+    border: 2px solid white;
+    padding: 15px;
 }
 
 .container {
     display: flex;
-    gap:10px;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.ccontent {
+    width:46%;
+    border:2px solid white;
+    padding:15px;
 }
